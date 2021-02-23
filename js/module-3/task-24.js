@@ -1,3 +1,41 @@
+/* Деструктуризация в циклах
+При переборе массива объектов циклом for...of получаются множественные обращения к свойствам объекта.
+
+const books = [
+  {
+    title: 'Последнее королевство',
+    author: 'Бернард Корнуэлл',
+    rating: 8.38,
+  },
+  {
+    title: 'На берегу спокойных вод',
+    author: 'Роберт Шекли',
+    rating: 8.51,
+  },
+];
+
+for (const book of books) {
+  console.log(book.title);
+  console.log(book.author);
+  console.log(book.rating);
+}
+Для того, чтобы сократить количество повторений, можно деструктуризировать свойства объекта в локальные переменные в теле цикла.
+
+for (const book of books) {
+  const { title, author, rating } = book;
+
+  console.log(title);
+  console.log(author);
+  console.log(rating);
+}
+Если в объекте немного свойств, деструктуризацию можно выполнить прямо в месте объявления переменной book.
+
+for (const { title, author, rating } of books) {
+  console.log(title);
+  console.log(author);
+  console.log(rating);
+} */
+
 const colors = [
   { hex: '#f44336', rgb: '244,67,54' },
   { hex: '#2196f3', rgb: '33,150,243' },

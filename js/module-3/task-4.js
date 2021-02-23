@@ -1,3 +1,33 @@
+/* Доступ к вложенным свойствам
+const user = {
+  name: 'Jacques Gluke',
+  tag: 'jgluke',
+  location: {
+    country: 'Jamaica',
+    city: 'Ocho Rios',
+  },
+  hobbies: ['swiming', 'music', 'sci-fi'],
+};
+Для доступа к вложенным свойствам используется цепочка обращений «через точку». Например, если необходимо получить значение страны пользователя, записываем user.location.country, где user.location это обращение (путь) к объекту в свойстве location, а user.locaton.country обращение к свойству country в этом объекте. То есть, «точка» указывает следующую вложенность.
+
+const location = user.location;
+console.log(location); // Объект location
+
+const country = user.location.country;
+console.log(country); // 'Jamaica'
+Если значение свойства это массив, то в нашем примере user.hobbies - обращение к этому массиву. Далее, можно получить доступ к его элементам через квадратные скобки и индекс или использовать свойства и методы.
+
+const hobbies = user.hobbies;
+console.log(hobbies); // ['swiming', 'music', 'sci-fi']
+
+const firstHobby = user.hobbies[0];
+console.log(firstHobby); // 'swiming'
+
+const numberOfHobbies = user.hobbies.length;
+console.log(numberOfHobbies); // 3 
+ */
+
+
 const apartment = {
   imgUrl: 'https://via.placeholder.com/640x480',
   descr: 'Просторная квартира в центре',

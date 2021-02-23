@@ -1,3 +1,10 @@
+/* Шаблонные строки
+Шаблонные строки это альтернатива конкатенации с более удобным синтаксисом. Шаблонная строка заключена в обратные (косые) кавычки вместо двойных или одинарных и может содержать местозаполнители, которые обозначаются знаком доллара и фигурными скобками - ${выражение}.
+
+! const guestName = 'Манго';
+! const roomNumber = 207;
+! const greeting = `Добро пожаловать ${guestName}, вы поселены в номер ${roomNumber}`; */
+
 // Базовый код
 const productName = 'Дроид';
 const pricePerItem = 3500;
@@ -6,8 +13,3 @@ const pricePerItem = 3500;
 const message = `Вы выбрали ${productName}, цена за штуку ${pricePerItem} кредитов`;
 
 console.log(message);
-// console.log();
-// console.log();
-// console.log();
-// console.log();
-// console.log();

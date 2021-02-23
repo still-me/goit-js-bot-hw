@@ -1,3 +1,23 @@
+/* Добавление свойств
+Операция добавления нового свойства после создания объекта ничем не отличается от изменения значения уже существующего свойства. Если при записи значения по имени, такого свойства в объекте нет, оно будет создано.
+
+const book = {
+  title: 'Последнее королевство',
+  author: 'Бернард Корнуэлл',
+  genres: ['историческая проза', 'приключения'],
+  public: true,
+  rating: 8.38
+};
+
+book.pageCount = 836;
+book.originalLanguage = 'en';
+book.translations = ['ua', 'ru'];
+
+console.log(book.pageCount); // 836
+console.log(book.originalLanguage); // 'en'
+console.log(book.translations); // ['ua', 'ru'] 
+ */
+
 const apartment = {
   imgUrl: 'https://via.placeholder.com/640x480',
   descr: 'Просторная квартира в центре',

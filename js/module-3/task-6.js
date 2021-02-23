@@ -1,3 +1,22 @@
+/* Изменение значения свойства
+После того, как объект создан, значение его свойств можно изменить. Для этого необходимо обратиться к ним по имени, например, «через точку», и присвоить новое значение.
+
+const book = {
+  title: 'Последнее королевство',
+  author: 'Бернард Корнуэлл',
+  genres: ['историческая проза', 'приключения'],
+  public: true,
+  rating: 8.38,
+};
+
+book.rating = 9;
+book.public = false;
+book.genres.push('драма');
+
+console.log(book.rating); // 9
+console.log(book.public); // false
+console.log(book.genres); // ['историческая проза', 'приключения', 'драма'] */
+
 const apartment = {
   imgUrl: 'https://via.placeholder.com/640x480',
   descr: 'Просторная квартира в центре',

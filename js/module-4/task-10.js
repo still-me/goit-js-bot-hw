@@ -1,3 +1,31 @@
+/* Метод bind и методы объекта
+При передаче методов объекта как колбэк-функций, контекст не сохраняется. Колбэк это ссылка на метод, которая присваивается как значение параметра, вызываемого без объекта.
+
+const customer = {
+  firstName: 'Jacob',
+  lastName: 'Mercer',
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+
+function makeMessage(callback) {
+  // callback() это вызов метода getFullName без объекта
+  console.log(`Обрабатываем заявку от ${callback()}.`);
+}
+
+makeMessage(customer.getFullName); // Будет ошибка при вызове функции
+В строгом режиме, значение this в методе getFullName, при вызове как колбэк-функции callback(), будет undefined. При обращении к свойствам firstName и lastName будет ошибка, так как undefined это не объект.
+
+Метод bind используется для привязки контекста при передаче методов объекта как колбэк-функций. Передадим колбэком не оригинальный метод getFullName, а его копию с привязанным контекстом к объекту customer.
+
+// ❌ Было
+makeMessage(customer.getFullName); // Будет ошибка при вызове функции
+
+// ✅ Стало
+makeMessage(customer.getFullName.bind(customer)); // Обрабатываем заявку от Jacob Mercer. 
+ */
+
 const service = {
   mailingList: ['mango@mail.com', 'poly@hotmail.de', 'ajax@jmail.net'],
   subscribe(email) {

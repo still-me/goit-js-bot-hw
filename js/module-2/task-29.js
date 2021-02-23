@@ -1,3 +1,10 @@
+/* Чётные числа
+Проверка на четность
+
+!function isEven (num) {
+!  return num % 2 === 0;
+!} */
+
 function getEvenNumbers(start, end) {
     // Пиши код ниже этой строки
     const evenNumbersArray = [];
